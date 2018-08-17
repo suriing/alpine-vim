@@ -1,4 +1,4 @@
-FROM jare/alpine-vim:latest
+FROM suriing/armhf-alpine-vim:latest
 
 # User config
 ENV UID="1000" \
