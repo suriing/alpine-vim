@@ -1,6 +1,6 @@
 # Multistage builds to reduce image size to ~37MB
 # by tuanhtrng
-FROM alpine:latest as builder
+FROM arm32v6/alpine:latest as builder
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
@@ -31,7 +31,7 @@ RUN git clone https://github.com/vim/vim \
     --with-python-config-dir=/usr/lib/python2.7/config \
  && make install
  
- FROM alpine:latest
+ FROM arm32v6/alpine:latest
  
  COPY --from=builder /usr/local/bin/ /usr/local/bin
  COPY --from=builder /usr/local/share/vim/ /usr/local/share/vim/
